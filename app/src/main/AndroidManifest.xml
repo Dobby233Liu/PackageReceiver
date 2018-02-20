@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.wenyuanliu.packageReceiver" >
+
+    <application
+        android:label="PackageReceiver">
+		<activity android:name=".GuideActivity" android:theme="@android:style/Theme.NoDisplay">
+			<intent-filter>
+			<action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+	        </intent-filter>
+		</activity>
+        <receiver
+            android:name=".Receiver"
+			android:enabled="true">
+            <intent-filter>
+				<action android:name="android.intent.action.PACKAGE_ADDED" />
+				<data android:scheme="package" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_REMOVED" />
+				<data android:scheme="package" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_REPLACED" />
+				<data android:scheme="package" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_INSTALL" />
+				<data android:scheme="package" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_CHANGE" />
+				<data android:scheme="package" />
+			</intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
