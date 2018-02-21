@@ -10,10 +10,23 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+	
+}
+
+plugins {
+  id 'com.gradle.build-scan' version '1.12.1'
+}
+
+buildScan {
+  licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+  licenseAgree = 'yes'
+  publishAlways()
 }
 
 allprojects {
     repositories {
         jcenter()
     }
-}
+
+} 
+
